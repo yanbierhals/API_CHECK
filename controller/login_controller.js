@@ -3,6 +3,7 @@ const loginService = require("../service/login_service")
 function realizarLogin(req, res) {
     const usuarioLogin = req.body
     try {
+        console.log('usuario ',usuarioLogin)
         const token = loginService.verificarLogin(usuarioLogin)
         res.status(201).json({token: token})
     } catch(err) {

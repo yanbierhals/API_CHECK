@@ -6,6 +6,7 @@ function verificarAcesso(req, res, next) {
         // Recupera o cabeçalho Authorization
         const authHeader = req.get("Authorization");
 
+        console.log('Auth Header', authHeader) 
         // Verifica se o cabeçalho Authorization está presente e começa com "Bearer "
         if (!authHeader || !authHeader.startsWith("Bearer ")) {
             return res.status(401).json({ msg: "Token não fornecido ou formato incorreto. Esperado: Bearer <token>" });
